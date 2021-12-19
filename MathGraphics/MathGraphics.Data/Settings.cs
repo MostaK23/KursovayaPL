@@ -1,10 +1,16 @@
-﻿namespace MathGraphics
+﻿using System.IO;
+using System;
+
+namespace MathGraphics
 {
     public class Config
     {
-        //H:\PROJECT\math_graphics\MathGraphics\MathGraphics.Data\DataBase\
-        public const string ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;" +
-            "AttachDbFilename=|DataDirectory|\\NotesDB.mdf;" +
-            @"Integrated Security=True";
+        private static string currentDirectory = AppDomain.CurrentDomain.BaseDirectory;
+        private static string databasePath = Path.GetFullPath(Path.Combine(currentDirectory, "..\\..\\"));
+        public static string DataBaseName = "NotesDB.mdf";
+
+        public static readonly string ConnectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;" +
+            $"AttachDbFilename={databasePath}{DataBaseName};" +
+            "Integrated Security=True";
     }
 }
