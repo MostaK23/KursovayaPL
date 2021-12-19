@@ -5,12 +5,14 @@ namespace MathGraphics
 {
     public class Config
     {
-        private static string currentDirectory = AppDomain.CurrentDomain.BaseDirectory;
-        private static string databasePath = Path.GetFullPath(Path.Combine(currentDirectory, "..\\..\\"));
-        public static string DataBaseName = "NotesDB.mdf";
+        private static readonly string currentDirectory = AppDomain.CurrentDomain.BaseDirectory;
+        private static readonly string databasePath = Path.GetFullPath(Path.Combine(currentDirectory, "..\\..\\"));
+
+        public static string DatabaseName = "NotesDB.mdf";
+        public static string DatabaseFullPath = Path.Combine(databasePath, DatabaseName);
 
         public static readonly string ConnectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;" +
-            $"AttachDbFilename={databasePath}{DataBaseName};" +
+            $"AttachDbFilename={DatabaseFullPath};" +
             "Integrated Security=True";
     }
 }
