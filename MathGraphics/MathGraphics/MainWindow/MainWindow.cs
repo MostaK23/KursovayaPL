@@ -2,6 +2,7 @@
 using System.Drawing;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
+using MathGraphics.Services.Services;
 using MathGraphics.Data.Repositories;
 
 namespace MathGraphics
@@ -61,7 +62,7 @@ namespace MathGraphics
             lblTitle.Text = "Notes";
 
             this.pnlFormLoader.Controls.Clear();
-            FrmNote FrmTheory_Vrb = new FrmNote(new AdoNetNoteRepository(Config.ConnectionString)) 
+            FrmNote FrmTheory_Vrb = new FrmNote(new NoteService(new JsonRepository(Config.DatabaseNameJson)))
             { Dock = DockStyle.Fill, TopLevel = false, TopMost = true };
 
             FrmTheory_Vrb.FormBorderStyle = FormBorderStyle.None;
