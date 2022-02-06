@@ -1,5 +1,5 @@
-﻿using MathGraphics.Data.Abstract;
-using MathGraphics.Data.Entities;
+﻿using MathGraphics.Data.Entities;
+using MathGraphics.Services.Abstract;
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
@@ -8,18 +8,18 @@ namespace MathGraphics
 {
     public partial class FrmNote : Form
     {
-        private readonly INoteRepository _noteRepository;
+        private readonly INoteService _noteService;
 
-        public FrmNote(INoteRepository noteRepository)
+        public FrmNote(INoteService noteService)
         {
             InitializeComponent();
 
-            _noteRepository = noteRepository;
+            _noteService = noteService;
         }
 
         private void frmTheory_Load(object sender, EventArgs e)
         {
-            FillOutputBox(_noteRepository.GetAll());
+            FillOutputBox(_noteService.GetAll());
         }
 
         private void AddButton_Click(object sender, EventArgs e)
@@ -28,21 +28,21 @@ namespace MathGraphics
 
             InputBox.Clear();
 
-            FillOutputBox(_noteRepository.GetAll());
+            FillOutputBox(_noteService.GetAll());
         }
 
         private void UpdateButton_Click(object sender, EventArgs e)
         {
             OutputBox.Clear();
 
-            FillOutputBox(_noteRepository.GetAll());
+            FillOutputBox(_noteService.GetAll());
         }
 
         private void DeleteButton_Click(object sender, EventArgs e)
         {
             Delete(int.Parse(DeleteIdInput.Text));
 
-            FillOutputBox(_noteRepository.GetAll());
+            FillOutputBox(_noteService.GetAll());
         }
 
         private void FillOutputBox(IEnumerable<NoteEntity> notes)
@@ -64,12 +64,12 @@ namespace MathGraphics
 
         private void Add(string text)
         {
-            _noteRepository.Create(text);
+            _noteService.Create(text);
         }
 
         private void Delete(int id)
         {
-            _noteRepository.Delete(id);
+            _noteService.Delete(id);
         }
 
         private void DisableLetters(object sender, KeyPressEventArgs e)

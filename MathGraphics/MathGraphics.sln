@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MathGraphics", "MathGraphic
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MathGraphics.Data", "MathGraphics.Data\MathGraphics.Data.csproj", "{10381769-DA9C-487B-9FBD-95156DB9AE79}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MathGraphics.Services", "MathGraphics.Services\MathGraphics.Services.csproj", "{10A82ED7-7506-4B3F-B6B8-FC981FDF9C7B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{10381769-DA9C-487B-9FBD-95156DB9AE79}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{10381769-DA9C-487B-9FBD-95156DB9AE79}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{10381769-DA9C-487B-9FBD-95156DB9AE79}.Release|Any CPU.Build.0 = Release|Any CPU
+		{10A82ED7-7506-4B3F-B6B8-FC981FDF9C7B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{10A82ED7-7506-4B3F-B6B8-FC981FDF9C7B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{10A82ED7-7506-4B3F-B6B8-FC981FDF9C7B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{10A82ED7-7506-4B3F-B6B8-FC981FDF9C7B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

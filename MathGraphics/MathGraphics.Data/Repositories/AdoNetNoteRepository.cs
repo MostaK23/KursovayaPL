@@ -7,7 +7,7 @@ namespace MathGraphics.Data.Repositories
 {
     public class AdoNetNoteRepository : INoteRepository
     {
-        private string connectionString;
+        private readonly string connectionString;
 
         public AdoNetNoteRepository(string connectionString)
         {
